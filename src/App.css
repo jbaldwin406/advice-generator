@@ -1,38 +1,96 @@
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 100%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
 .App {
   text-align: center;
+  font-size: 28px;
+  font-family: 'Manrope',
+      sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column nowrap;
+  min-height: 332px;
+  min-width: 540px;
+  background-color: var(--dark-grayish-blue);
+  border-radius: 15px;
+  box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.card-content {
+  width: 444px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-content h1 {
+  color: var(--neon-green);
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 4.08571px;
+}
+
+.card-content p {
+  color: var(--light-cyan);
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.divider {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.random-btn {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--neon-green);
+  cursor: pointer;
+  position: absolute;
+  top: calc(100% - 32px);
+}
+
+.random-btn:hover {
+  background: #53FFAA;
+  box-shadow: 0px 0px 40px #53FFAA;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-container {
+      min-height: 315px;
+      min-width: 343px;
+      background-color: var(--dark-grayish-blue);
+      border-radius: 10px;
+      box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+      position: relative;
+    }
+  
+    .card-content {
+      max-width: 295px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+  
+    }
+
+    .divider {
+      max-width: 100%;
+    }
 }
